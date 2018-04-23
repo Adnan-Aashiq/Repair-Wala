@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
 
         private void cmdproceed_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
@@ -115,7 +115,20 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            Myserver.Service1 server = new Myserver.Service1();
+            Myserver.Admin admin = server.get_admin();
+            if(txtadmin.Text == admin.Id)
+            {
+                frmadmin frm = new frmadmin();
+                this.Hide();
+                frm.Show();
+                txtadmin.Hide();
+                cmdadminId.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid!");
+            }
             txtadmin.Hide();
             cmdadminId.Hide();
         }

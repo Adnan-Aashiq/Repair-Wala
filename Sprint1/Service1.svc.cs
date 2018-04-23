@@ -23,14 +23,16 @@ namespace Sprint1
             return x;
         }
        
+       
+        
         public void Add_Repairer(string name, string addres, string cellno, string cnic,int id)
         {
-            
+            RepairersRecords.Add_Repairer(name, addres, cellno, cnic,id);
         }
         public bool Repairer_NotBuzy(Repairer r)
         {
             return true;
-        } 
+        }
         public bool Assign_client(client c)
         {
             return true;

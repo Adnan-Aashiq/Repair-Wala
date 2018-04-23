@@ -31,18 +31,22 @@ namespace Sprint1
         {
 
         }*/
-       /* public static bool Repairer_NotBusy(Repairer r)
+        public static bool Repairer_NotBusy(Repairer r)
         {
-            
+            return true;
         }
         public static bool Assign_client(client c)      //***
         {
+            bool msg = false;
             
+            return msg;
         }
         public static bool Appoint_client(int id)
         {
+            bool msg=false;
             
-        }*/
+            return msg;
+        }
 
     }
 }

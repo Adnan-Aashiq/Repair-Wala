@@ -55,7 +55,6 @@ namespace WindowsFormsApp1
         private void cmdhome_Click(object sender, EventArgs e)
         {
             Utility.curr_login_client = null;
-            MessageBox.Show("Customer is Logged Out!");
             frmhome frm = frmhome.get_instance();
             this.Hide();
             frm.Show();
@@ -147,7 +146,21 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            Myserver.Service1 server = new Myserver.Service1();
+            bool done;
+            bool pass;
+            server.Assign_client(Utility.curr_login_client, out done, out pass);
+            if (done == true)
+            {
+                MessageBox.Show("Your Request has been sent!");
+            }
+            else
+            {
+                MessageBox.Show("System Failure!");
+            }
+            /*Myserver.client c = new Myserver.client();
+            Myserver.Service1 server = new Myserver.Service1();
+            List<Myserver.client> list = server.Get_clients_list().ToList<Myserver.client>();*/
         }
 
         private void txtcdevice_Click(object sender, EventArgs e)

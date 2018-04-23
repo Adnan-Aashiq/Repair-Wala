@@ -57,6 +57,39 @@ namespace WindowsFormsApp1
         private void cmdcreg_Click(object sender, EventArgs e)
         {
 
+            if (txtrname.Text == "" || txtrcell.Text == "" || txtraddress.Text == "" || txtrid.Text == "" || txtrcnic.Text == "")
+            {
+                MessageBox.Show("Enter all the entries!");
+            }
+            else
+            {
+                if (!txtrname.Text.Any(Char.IsLetter) || !txtraddress.Text.Any(Char.IsLetter) ) //agr letter nahi hai
+                {
+                    MessageBox.Show("Name & Address should be Letters!");
+                }
+                else
+                {
+                    if (txtrcell.Text.Any(Char.IsLetter) || txtrcnic.Text.Any(Char.IsLetter))
+                    {
+                        MessageBox.Show("Phone & Cnic Number Should be Digits!");
+                    }
+                    else
+                    {
+                        Myserver.Service1 server = new Myserver.Service1();
+                        bool ok = true;
+                        int id = int.Parse(txtrid.Text);
+                        server.Add_Repairer(txtrname.Text, txtraddress.Text, txtrcell.Text,txtrcnic.Text, id,ok);
+                        txtrid.Text = id.ToString();
+                        MessageBox.Show("Repairer Registered!");
+                        
+                        
+                        /*server.(txtcname.Text, txtcproblem.Text, txtcaddress.Text, txtccell.Text, txtcdevice.Text, txtcmail.Text, out x, out ok);
+                        MessageBox.Show("User has been Registered!");
+                        txtcid.Text = x.ToString();
+                        txtcid.Show();*/
+                    }
+                }
+            }
         }
       
 
