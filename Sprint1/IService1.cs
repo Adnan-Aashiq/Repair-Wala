@@ -19,8 +19,7 @@ namespace Sprint1
 
         [OperationContract]
         int Add_Clients(string name, string problem, string addres, string cellno, string device, string mail);   //***
-        [OperationContract]
-        bool Search_Client(int id);
+    
         [OperationContract]
         bool Repairer_NotBuzy(Repairer r);
         [OperationContract]

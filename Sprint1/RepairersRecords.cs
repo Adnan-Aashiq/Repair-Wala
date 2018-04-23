@@ -11,9 +11,15 @@ namespace Sprint1
 
         public static void Add_Repairer(string name,string addres,string cellno,string cnic,int id)
         {
-            
+            Repairer r = new Repairer();
+            r.Name = name;
+            r.Address = addres;
+            r.Phone_number1 = cellno;
+            r.Person_id1 = cnic;
+            r.Id = id;
+            repairers.Add(r);
         }
-        public static Repairer Get_id_repairer(int id)
+        /*public static Repairer Get_id_repairer(int id)
         {
 
         }
@@ -24,8 +30,8 @@ namespace Sprint1
         public static bool Remove_account(Repairer r)
         {
 
-        }
-        public static bool Repairer_NotBusy(Repairer r)
+        }*/
+       /* public static bool Repairer_NotBusy(Repairer r)
         {
             
         }
@@ -36,7 +42,7 @@ namespace Sprint1
         public static bool Appoint_client(int id)
         {
             
-        }
+        }*/
 
     }
 }

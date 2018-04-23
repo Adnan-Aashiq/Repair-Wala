@@ -23,30 +23,21 @@ namespace Sprint1
             return x;
         }
        
-        public bool Search_Client(int id)
-        {
-            bool x= ClientsRecord.Search_Clients(id);
-            return x;
-        }
-        
         public void Add_Repairer(string name, string addres, string cellno, string cnic,int id)
         {
-            RepairersRecords.Add_Repairer(name, addres, cellno, cnic,id);
+            
         }
         public bool Repairer_NotBuzy(Repairer r)
         {
-            bool status =RepairersRecords.Repairer_NotBusy(r);
-            return status;
-        }
+            return true;
+        } 
         public bool Assign_client(client c)
         {
-            bool msg = RepairersRecords.Assign_client(c);
-            return msg;
+            return true;
         }
         public bool Appoint_client(int id)
         {
-            bool msg = RepairersRecords.Appoint_client(id);
-            return msg;
+            return true;
         }
         /*public Repairer Get_id_repairer(int id)
         {
