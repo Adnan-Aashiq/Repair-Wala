@@ -23,7 +23,11 @@ namespace Sprint1
             return x;
         }
        
-       
+        public bool Search_Client(int id)
+        {
+            bool x= ClientsRecord.Search_Clients(id);
+            return x;
+        }
         
         public void Add_Repairer(string name, string addres, string cellno, string cnic,int id)
         {
@@ -31,15 +35,18 @@ namespace Sprint1
         }
         public bool Repairer_NotBuzy(Repairer r)
         {
-            return true;
+            bool status =RepairersRecords.Repairer_NotBusy(r);
+            return status;
         }
         public bool Assign_client(client c)
         {
-            return true;
+            bool msg = RepairersRecords.Assign_client(c);
+            return msg;
         }
         public bool Appoint_client(int id)
         {
-            return true;
+            bool msg = RepairersRecords.Appoint_client(id);
+            return msg;
         }
         /*public Repairer Get_id_repairer(int id)
         {

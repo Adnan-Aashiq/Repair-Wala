@@ -41,7 +41,18 @@ namespace Sprint1
             //Utility.curr_reg_client = c;
             return count;
         }
-        
+        public static bool Search_Clients(int id)
+        {
+            bool exist = false;
+            foreach (client c in ClientsRecord.clients)
+            {
+                if (c.Id_client == id)
+                {
+                    exist= true;
+                }
+            }
+            return exist;
+        }
 
     }
 

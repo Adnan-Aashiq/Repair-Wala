@@ -105,7 +105,33 @@ namespace WindowsFormsApp1
 
         private void cmdproceed_Click(object sender, EventArgs e)
         {
-            
+            bool valid = false;
+            Myserver.Service1 server = new Myserver.Service1();
+            List<Myserver.Repairer> list = server.Get_repairers_list().ToList<Myserver.Repairer>();
+            foreach(Myserver.Repairer r in list)
+            {
+                if(txtrepair.Text == r.Id.ToString())
+                {
+                    {
+                        valid = true;
+                        Utility.curr_repairer = r;
+                        break;
+                    }
+                }
+            }
+            if(valid== true)
+            {
+                MessageBox.Show("Login Successful!");
+                frmrepairPortal frm = new frmrepairPortal();
+                this.Hide();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid!");
+            }
+            txtrepair.Hide();
+            cmdrepairid.Hide();
         }
 
         private void cmdhome_Click(object sender, EventArgs e)

@@ -33,18 +33,41 @@ namespace Sprint1
         }*/
         public static bool Repairer_NotBusy(Repairer r)
         {
-            return true;
+            bool status=false;
+            if(r.Appointment == null)
+            {
+                status = true;
+            }
+            return status;
         }
         public static bool Assign_client(client c)      //***
         {
             bool msg = false;
-            
+            foreach(Repairer r in RepairersRecords.repairers)
+            {
+                if(r.Orders1.Count() < 3)
+                {
+                    if(Repairer_NotBusy(r)== true)
+                    {
+                        r.Orders1.Add(c);
+                        msg = true;
+                        break;
+                    }
+                }
+            }
             return msg;
         }
         public static bool Appoint_client(int id)
         {
             bool msg=false;
-            
+            foreach(client c in ClientsRecord.clients)
+            {
+                if(c.Id_client == id)
+                {
+                    //Utility.curr_repairer.Appointment = c;
+                    msg = true;
+                }
+            }
             return msg;
         }
 

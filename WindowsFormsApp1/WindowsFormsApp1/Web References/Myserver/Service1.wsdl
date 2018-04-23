@@ -25,6 +25,12 @@
   <wsdl:message name="IService1_Add_Clients_OutputMessage">
     <wsdl:part name="parameters" element="tns:Add_ClientsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Search_Client_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search_Client" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Search_Client_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Search_ClientResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Repairer_NotBuzy_InputMessage">
     <wsdl:part name="parameters" element="tns:Repairer_NotBuzy" />
   </wsdl:message>
@@ -86,6 +92,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Add_Clients" message="tns:IService1_Add_Clients_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Add_ClientsResponse" message="tns:IService1_Add_Clients_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Search_Client">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Search_Client" message="tns:IService1_Search_Client_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Search_ClientResponse" message="tns:IService1_Search_Client_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Repairer_NotBuzy">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Repairer_NotBuzy" message="tns:IService1_Repairer_NotBuzy_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Repairer_NotBuzyResponse" message="tns:IService1_Repairer_NotBuzy_OutputMessage" />
@@ -141,6 +151,15 @@
     </wsdl:operation>
     <wsdl:operation name="Add_Clients">
       <soap:operation soapAction="http://tempuri.org/IService1/Add_Clients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Client">
+      <soap:operation soapAction="http://tempuri.org/IService1/Search_Client" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

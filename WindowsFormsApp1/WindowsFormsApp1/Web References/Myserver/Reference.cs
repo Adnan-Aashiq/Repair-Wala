@@ -35,6 +35,8 @@ namespace WindowsFormsApp1.Myserver {
         
         private System.Threading.SendOrPostCallback Add_ClientsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Search_ClientOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Repairer_NotBuzyOperationCompleted;
         
         private System.Threading.SendOrPostCallback Assign_clientOperationCompleted;
@@ -97,6 +99,9 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public event Add_ClientsCompletedEventHandler Add_ClientsCompleted;
+        
+        /// <remarks/>
+        public event Search_ClientCompletedEventHandler Search_ClientCompleted;
         
         /// <remarks/>
         public event Repairer_NotBuzyCompletedEventHandler Repairer_NotBuzyCompleted;
@@ -229,6 +234,38 @@ namespace WindowsFormsApp1.Myserver {
             if ((this.Add_ClientsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Add_ClientsCompleted(this, new Add_ClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Search_Client", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void Search_Client(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified, out bool Search_ClientResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool Search_ClientResultSpecified) {
+            object[] results = this.Invoke("Search_Client", new object[] {
+                        id,
+                        idSpecified});
+            Search_ClientResult = ((bool)(results[0]));
+            Search_ClientResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void Search_ClientAsync(int id, bool idSpecified) {
+            this.Search_ClientAsync(id, idSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void Search_ClientAsync(int id, bool idSpecified, object userState) {
+            if ((this.Search_ClientOperationCompleted == null)) {
+                this.Search_ClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSearch_ClientOperationCompleted);
+            }
+            this.InvokeAsync("Search_Client", new object[] {
+                        id,
+                        idSpecified}, this.Search_ClientOperationCompleted, userState);
+        }
+        
+        private void OnSearch_ClientOperationCompleted(object arg) {
+            if ((this.Search_ClientCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Search_ClientCompleted(this, new Search_ClientCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -913,6 +950,40 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public bool Add_ClientsResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void Search_ClientCompletedEventHandler(object sender, Search_ClientCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Search_ClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Search_ClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Search_ClientResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool Search_ClientResultSpecified {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));

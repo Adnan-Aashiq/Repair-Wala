@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
         {
             Myserver.Admin admin = new Myserver.Admin();
             lbladminname.Text = admin.Name;
-            lbladminname.Show();
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
