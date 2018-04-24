@@ -123,19 +123,7 @@ namespace WindowsFormsApp1
 
         private void cmdselect_Click(object sender, EventArgs e)
         {
-            Myserver.Service1 server = new Myserver.Service1();
-            List<Myserver.client> list = server.Get_client_list().ToList<Myserver.client>();
-            foreach (Myserver.client c in list)
-            {
-                if (c.Id_client.ToString() == txtid.Text)
-                {
-                    Utility.curr_repairer.Appointment = c;
-                    MessageBox.Show("Order Selected!");
-                    BindingSource S = new BindingSource();
-                    S.DataSource = c;
-                    dataGridView2.DataSource = S;
-                }
-            }
+            
         }
     }
 }
