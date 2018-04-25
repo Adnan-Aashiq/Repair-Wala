@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Runtime.Serialization;
 namespace Sprint1
 {
-    [DataContract]
+
     public class Repairer
     {
         private string name;
@@ -34,7 +33,7 @@ namespace Sprint1
 
         }*/
 
-        [DataMember]
+        
         public int Account
         {
             get
@@ -47,7 +46,7 @@ namespace Sprint1
                 account = value;
             }
         }
-        [DataMember]
+        
         public string Address
         {
             get
@@ -60,7 +59,7 @@ namespace Sprint1
                 address = value;
             }
         }
-        [DataMember]
+        
         public client Appointment
         {
             get
@@ -75,7 +74,7 @@ namespace Sprint1
         }
 
 
-        [DataMember]
+        
         public string Name
         {
             get
@@ -88,7 +87,7 @@ namespace Sprint1
                 name = value;
             }
         }
-        [DataMember]
+        
         public string Person_id1
         {
             get
@@ -101,7 +100,7 @@ namespace Sprint1
                 Person_id = value;
             }
         }
-        [DataMember]
+        
         public string Phone_number1
         {
             get
@@ -114,9 +113,9 @@ namespace Sprint1
                 Phone_number = value;
             }
         }
-        [DataMember]
+        
         public int Id { get => id; set => id = value; }
-        [DataMember]
+        
         public List<client> Orders1 { get => orders; set => orders = value; }
     }
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Runtime.Serialization; //step1
+ //step1
 namespace Sprint1
 {
-    [DataContract]//step2
+    
     public class client
     {
         private string name_client;
@@ -21,7 +21,7 @@ namespace Sprint1
         private string comment;
         private string complaint;
 
-        [DataMember]   //Step3
+       
         public string Address
         {
             get
@@ -34,7 +34,7 @@ namespace Sprint1
                 address = value;
             }
         }
-        [DataMember]
+        
         public string Cell_client
         {
             get
@@ -47,7 +47,7 @@ namespace Sprint1
                 cell_client = value;
             }
         }
-        [DataMember]
+        
         public string Comment
         {
             get
@@ -60,7 +60,7 @@ namespace Sprint1
                 comment = value;
             }
         }
-        [DataMember]
+        
         public string Complaint
         {
             get
@@ -73,7 +73,7 @@ namespace Sprint1
                 complaint = value;
             }
         }
-        [DataMember]
+        
         public string Device
         {
             get
@@ -90,7 +90,7 @@ namespace Sprint1
 
 
 
-        [DataMember]
+        
         public string Name_client
         {
             get
@@ -103,11 +103,11 @@ namespace Sprint1
                 name_client = value;
             }
         }
-        [DataMember]
+        
         public string Problem { get => problem; set => problem = value; }
-        [DataMember]
+        
         public string Mail { get => mail; set => mail = value; }
-        [DataMember]
+        
         public int Id_client { get => id_client; set => id_client = value; }
 
         /*public static Repairer Repair()
