@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmdselect = new System.Windows.Forms.Button();
+            this.cmddone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -153,6 +154,18 @@
             this.cmdselect.UseVisualStyleBackColor = false;
             this.cmdselect.Click += new System.EventHandler(this.cmdselect_Click);
             // 
+            // cmddone
+            // 
+            this.cmddone.BackColor = System.Drawing.Color.Honeydew;
+            this.cmddone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmddone.Location = new System.Drawing.Point(850, 348);
+            this.cmddone.Name = "cmddone";
+            this.cmddone.Size = new System.Drawing.Size(86, 31);
+            this.cmddone.TabIndex = 36;
+            this.cmddone.Text = "Done";
+            this.cmddone.UseVisualStyleBackColor = false;
+            this.cmddone.Click += new System.EventHandler(this.cmddone_Click);
+            // 
             // frmrepairPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -160,6 +173,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 405);
+            this.Controls.Add(this.cmddone);
             this.Controls.Add(this.cmdselect);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -193,5 +207,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cmdselect;
+        private System.Windows.Forms.Button cmddone;
     }
 }

@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Sprint1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Sprint1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="Repairer">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Account" type="xs:int" />
-      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Appointment" nillable="true" type="tns:client" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Orders1" nillable="true" type="tns:ArrayOfclient" />
-      <xs:element minOccurs="0" name="Person_id1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Phone_number1" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Repairer" nillable="true" type="tns:Repairer" />
   <xs:complexType name="client">
     <xs:sequence>
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
@@ -27,6 +14,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="client" nillable="true" type="tns:client" />
+  <xs:complexType name="Repairer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" type="xs:int" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Appointment" nillable="true" type="tns:client" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orders1" nillable="true" type="tns:ArrayOfclient" />
+      <xs:element minOccurs="0" name="Person_id1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone_number1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Repairer" nillable="true" type="tns:Repairer" />
   <xs:complexType name="ArrayOfclient">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="client" nillable="true" type="tns:client" />

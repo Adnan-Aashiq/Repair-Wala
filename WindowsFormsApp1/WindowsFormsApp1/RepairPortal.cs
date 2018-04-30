@@ -83,18 +83,7 @@ namespace WindowsFormsApp1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.Text == "Completed")
-            {
-                MessageBox.Show("80% Amount is added to your account!");
-            }
-            if(comboBox1.Text == "Remove")
-            {
-                MessageBox.Show("Client is removed from Record!");
-            }
-            if (comboBox1.Text == "Fix Appointment")
-            {
-                MessageBox.Show("Appointment Fixed!");
-            }
+            
 
         }
 
@@ -118,7 +107,10 @@ namespace WindowsFormsApp1
         private void txtid_Click(object sender, EventArgs e)
         {
             txtid.Clear();
-            
+            if(txtid.Text == "")
+            {
+                txtid.Text = "Enter Id to select Order";
+            }
         }
 
         private void cmdselect_Click(object sender, EventArgs e)
@@ -129,11 +121,45 @@ namespace WindowsFormsApp1
             {
                 if (c.Id_client.ToString() == txtid.Text)
                 {
-                    Utility.curr_repairer.Appointment = c;
-                    MessageBox.Show("Order Selected!");
                     BindingSource S = new BindingSource();
                     S.DataSource = c;
                     dataGridView2.DataSource = S;
+                }
+            }
+        }
+
+        private void cmddone_Click(object sender, EventArgs e)
+        {
+            bool id = true;
+            Myserver.Service1 server = new Myserver.Service1();
+            List<Myserver.client> list = server.Get_client_list().ToList<Myserver.client>();
+            if (comboBox1.Text == "Completed")
+            {
+                Utility.curr_repairer.Account = Utility.curr_repairer.Account + 300;
+                MessageBox.Show("300Rs is added to your account!");
+            }
+            if (comboBox1.Text == "Remove")
+            {
+                foreach(Myserver.client c in Utility.curr_repairer.Orders1)
+                {
+                    if(txtid.Text == c.Id_client.ToString())
+                    {
+                        server.remove_order(c, Utility.curr_repairer.Id, id);
+                    }
+                }
+                MessageBox.Show("Client is removed from Record!");
+            }
+            if (comboBox1.Text == "Fix Appointment")
+            {
+                foreach (Myserver.client c in list)
+                {
+                    if (c.Id_client.ToString() == txtid.Text)
+                    {
+                        bool stat = true;
+                        Utility.curr_repairer.Appointment = c;
+                        MessageBox.Show("Appointment Fixed!");
+                        server.fix_app(c, Utility.curr_repairer.Id, id);
+                    }
                 }
             }
         }

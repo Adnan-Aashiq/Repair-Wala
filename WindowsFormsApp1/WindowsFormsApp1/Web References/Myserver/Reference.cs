@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Myserver {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
@@ -47,7 +47,13 @@ namespace WindowsFormsApp1.Myserver {
         
         private System.Threading.SendOrPostCallback Get_client_listOperationCompleted;
         
-        private System.Threading.SendOrPostCallback get_adminOperationCompleted;
+        private System.Threading.SendOrPostCallback make_adminOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback fix_appOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Search_RepairerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback remove_orderOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
@@ -119,7 +125,16 @@ namespace WindowsFormsApp1.Myserver {
         public event Get_client_listCompletedEventHandler Get_client_listCompleted;
         
         /// <remarks/>
-        public event get_adminCompletedEventHandler get_adminCompleted;
+        public event make_adminCompletedEventHandler make_adminCompleted;
+        
+        /// <remarks/>
+        public event fix_appCompletedEventHandler fix_appCompleted;
+        
+        /// <remarks/>
+        public event Search_RepairerCompletedEventHandler Search_RepairerCompleted;
+        
+        /// <remarks/>
+        public event remove_orderCompletedEventHandler remove_orderCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -239,12 +254,12 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Search_Client", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Search_Client(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified, out bool Search_ClientResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool Search_ClientResultSpecified) {
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public client Search_Client(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified) {
             object[] results = this.Invoke("Search_Client", new object[] {
                         id,
                         idSpecified});
-            Search_ClientResult = ((bool)(results[0]));
-            Search_ClientResultSpecified = ((bool)(results[1]));
+            return ((client)(results[0]));
         }
         
         /// <remarks/>
@@ -420,30 +435,126 @@ namespace WindowsFormsApp1.Myserver {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/get_admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Admin get_admin() {
-            object[] results = this.Invoke("get_admin", new object[0]);
-            return ((Admin)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/make_admin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void make_admin([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Admin a) {
+            this.Invoke("make_admin", new object[] {
+                        a});
         }
         
         /// <remarks/>
-        public void get_adminAsync() {
-            this.get_adminAsync(null);
+        public void make_adminAsync(Admin a) {
+            this.make_adminAsync(a, null);
         }
         
         /// <remarks/>
-        public void get_adminAsync(object userState) {
-            if ((this.get_adminOperationCompleted == null)) {
-                this.get_adminOperationCompleted = new System.Threading.SendOrPostCallback(this.Onget_adminOperationCompleted);
+        public void make_adminAsync(Admin a, object userState) {
+            if ((this.make_adminOperationCompleted == null)) {
+                this.make_adminOperationCompleted = new System.Threading.SendOrPostCallback(this.Onmake_adminOperationCompleted);
             }
-            this.InvokeAsync("get_admin", new object[0], this.get_adminOperationCompleted, userState);
+            this.InvokeAsync("make_admin", new object[] {
+                        a}, this.make_adminOperationCompleted, userState);
         }
         
-        private void Onget_adminOperationCompleted(object arg) {
-            if ((this.get_adminCompleted != null)) {
+        private void Onmake_adminOperationCompleted(object arg) {
+            if ((this.make_adminCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.get_adminCompleted(this, new get_adminCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.make_adminCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/fix_app", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void fix_app([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] client c, int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified) {
+            this.Invoke("fix_app", new object[] {
+                        c,
+                        id,
+                        idSpecified});
+        }
+        
+        /// <remarks/>
+        public void fix_appAsync(client c, int id, bool idSpecified) {
+            this.fix_appAsync(c, id, idSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void fix_appAsync(client c, int id, bool idSpecified, object userState) {
+            if ((this.fix_appOperationCompleted == null)) {
+                this.fix_appOperationCompleted = new System.Threading.SendOrPostCallback(this.Onfix_appOperationCompleted);
+            }
+            this.InvokeAsync("fix_app", new object[] {
+                        c,
+                        id,
+                        idSpecified}, this.fix_appOperationCompleted, userState);
+        }
+        
+        private void Onfix_appOperationCompleted(object arg) {
+            if ((this.fix_appCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.fix_appCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Search_Repairer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Repairer Search_Repairer(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified) {
+            object[] results = this.Invoke("Search_Repairer", new object[] {
+                        id,
+                        idSpecified});
+            return ((Repairer)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Search_RepairerAsync(int id, bool idSpecified) {
+            this.Search_RepairerAsync(id, idSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void Search_RepairerAsync(int id, bool idSpecified, object userState) {
+            if ((this.Search_RepairerOperationCompleted == null)) {
+                this.Search_RepairerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSearch_RepairerOperationCompleted);
+            }
+            this.InvokeAsync("Search_Repairer", new object[] {
+                        id,
+                        idSpecified}, this.Search_RepairerOperationCompleted, userState);
+        }
+        
+        private void OnSearch_RepairerOperationCompleted(object arg) {
+            if ((this.Search_RepairerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Search_RepairerCompleted(this, new Search_RepairerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/remove_order", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void remove_order([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] client c, int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified) {
+            this.Invoke("remove_order", new object[] {
+                        c,
+                        id,
+                        idSpecified});
+        }
+        
+        /// <remarks/>
+        public void remove_orderAsync(client c, int id, bool idSpecified) {
+            this.remove_orderAsync(c, id, idSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void remove_orderAsync(client c, int id, bool idSpecified, object userState) {
+            if ((this.remove_orderOperationCompleted == null)) {
+                this.remove_orderOperationCompleted = new System.Threading.SendOrPostCallback(this.Onremove_orderOperationCompleted);
+            }
+            this.InvokeAsync("remove_order", new object[] {
+                        c,
+                        id,
+                        idSpecified}, this.remove_orderOperationCompleted, userState);
+        }
+        
+        private void Onremove_orderOperationCompleted(object arg) {
+            if ((this.remove_orderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.remove_orderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -529,144 +640,7 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Sprint1")]
-    public partial class Repairer {
-        
-        private int accountField;
-        
-        private bool accountFieldSpecified;
-        
-        private string addressField;
-        
-        private client appointmentField;
-        
-        private int idField;
-        
-        private bool idFieldSpecified;
-        
-        private string nameField;
-        
-        private client[] orders1Field;
-        
-        private string person_id1Field;
-        
-        private string phone_number1Field;
-        
-        /// <remarks/>
-        public int Account {
-            get {
-                return this.accountField;
-            }
-            set {
-                this.accountField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool AccountSpecified {
-            get {
-                return this.accountFieldSpecified;
-            }
-            set {
-                this.accountFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Address {
-            get {
-                return this.addressField;
-            }
-            set {
-                this.addressField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public client Appointment {
-            get {
-                return this.appointmentField;
-            }
-            set {
-                this.appointmentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public client[] Orders1 {
-            get {
-                return this.orders1Field;
-            }
-            set {
-                this.orders1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Person_id1 {
-            get {
-                return this.person_id1Field;
-            }
-            set {
-                this.person_id1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Phone_number1 {
-            get {
-                return this.phone_number1Field;
-            }
-            set {
-                this.phone_number1Field = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -804,7 +778,7 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -851,7 +825,7 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -886,15 +860,152 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Sprint1")]
+    public partial class Repairer {
+        
+        private int accountField;
+        
+        private bool accountFieldSpecified;
+        
+        private string addressField;
+        
+        private client appointmentField;
+        
+        private int idField;
+        
+        private bool idFieldSpecified;
+        
+        private string nameField;
+        
+        private client[] orders1Field;
+        
+        private string person_id1Field;
+        
+        private string phone_number1Field;
+        
+        /// <remarks/>
+        public int Account {
+            get {
+                return this.accountField;
+            }
+            set {
+                this.accountField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AccountSpecified {
+            get {
+                return this.accountFieldSpecified;
+            }
+            set {
+                this.accountFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Address {
+            get {
+                return this.addressField;
+            }
+            set {
+                this.addressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public client Appointment {
+            get {
+                return this.appointmentField;
+            }
+            set {
+                this.appointmentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IdSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public client[] Orders1 {
+            get {
+                return this.orders1Field;
+            }
+            set {
+                this.orders1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Person_id1 {
+            get {
+                return this.person_id1Field;
+            }
+            set {
+                this.person_id1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Phone_number1 {
+            get {
+                return this.phone_number1Field;
+            }
+            set {
+                this.phone_number1Field = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Add_RepairerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void is_loginCompletedEventHandler(object sender, is_loginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class is_loginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -924,11 +1035,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Add_ClientsCompletedEventHandler(object sender, Add_ClientsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Add_ClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -958,11 +1069,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Search_ClientCompletedEventHandler(object sender, Search_ClientCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Search_ClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -975,28 +1086,20 @@ namespace WindowsFormsApp1.Myserver {
         }
         
         /// <remarks/>
-        public bool Search_ClientResult {
+        public client Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public bool Search_ClientResultSpecified {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[1]));
+                return ((client)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Repairer_NotBuzyCompletedEventHandler(object sender, Repairer_NotBuzyCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Repairer_NotBuzyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1026,11 +1129,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Assign_clientCompletedEventHandler(object sender, Assign_clientCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Assign_clientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1060,11 +1163,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Appoint_clientCompletedEventHandler(object sender, Appoint_clientCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Appoint_clientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1094,11 +1197,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Get_repairers_listCompletedEventHandler(object sender, Get_repairers_listCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Get_repairers_listCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1120,11 +1223,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void Get_client_listCompletedEventHandler(object sender, Get_client_listCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Get_client_listCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1146,37 +1249,49 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void get_adminCompletedEventHandler(object sender, get_adminCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void make_adminCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void fix_appCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void Search_RepairerCompletedEventHandler(object sender, Search_RepairerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class get_adminCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class Search_RepairerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal get_adminCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal Search_RepairerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public Admin Result {
+        public Repairer Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Admin)(this.results[0]));
+                return ((Repairer)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void remove_orderCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1198,11 +1313,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

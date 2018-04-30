@@ -11,8 +11,31 @@ namespace WindowsFormsApp1
         private string name;
         private int id;
 
-        public string Name { get => name; set => name = value; }
-        public int Id { get => id; set => id = value; }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
 
         /*public Repairer Check_account(int id)
         {

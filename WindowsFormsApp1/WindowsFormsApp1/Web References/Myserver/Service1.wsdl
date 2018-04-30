@@ -61,11 +61,29 @@
   <wsdl:message name="IService1_Get_client_list_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_client_listResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_get_admin_InputMessage">
-    <wsdl:part name="parameters" element="tns:get_admin" />
+  <wsdl:message name="IService1_make_admin_InputMessage">
+    <wsdl:part name="parameters" element="tns:make_admin" />
   </wsdl:message>
-  <wsdl:message name="IService1_get_admin_OutputMessage">
-    <wsdl:part name="parameters" element="tns:get_adminResponse" />
+  <wsdl:message name="IService1_make_admin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:make_adminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_fix_app_InputMessage">
+    <wsdl:part name="parameters" element="tns:fix_app" />
+  </wsdl:message>
+  <wsdl:message name="IService1_fix_app_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fix_appResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Search_Repairer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search_Repairer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Search_Repairer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Search_RepairerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_remove_order_InputMessage">
+    <wsdl:part name="parameters" element="tns:remove_order" />
+  </wsdl:message>
+  <wsdl:message name="IService1_remove_order_OutputMessage">
+    <wsdl:part name="parameters" element="tns:remove_orderResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
@@ -116,9 +134,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Get_client_list" message="tns:IService1_Get_client_list_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Get_client_listResponse" message="tns:IService1_Get_client_list_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="get_admin">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/get_admin" message="tns:IService1_get_admin_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/get_adminResponse" message="tns:IService1_get_admin_OutputMessage" />
+    <wsdl:operation name="make_admin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/make_admin" message="tns:IService1_make_admin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/make_adminResponse" message="tns:IService1_make_admin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fix_app">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/fix_app" message="tns:IService1_fix_app_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/fix_appResponse" message="tns:IService1_fix_app_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search_Repairer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Search_Repairer" message="tns:IService1_Search_Repairer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Search_RepairerResponse" message="tns:IService1_Search_Repairer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="remove_order">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/remove_order" message="tns:IService1_remove_order_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/remove_orderResponse" message="tns:IService1_remove_order_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -212,8 +242,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="get_admin">
-      <soap:operation soapAction="http://tempuri.org/IService1/get_admin" style="document" />
+    <wsdl:operation name="make_admin">
+      <soap:operation soapAction="http://tempuri.org/IService1/make_admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fix_app">
+      <soap:operation soapAction="http://tempuri.org/IService1/fix_app" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search_Repairer">
+      <soap:operation soapAction="http://tempuri.org/IService1/Search_Repairer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove_order">
+      <soap:operation soapAction="http://tempuri.org/IService1/remove_order" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

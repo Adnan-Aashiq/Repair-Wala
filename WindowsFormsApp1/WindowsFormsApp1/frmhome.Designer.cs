@@ -110,7 +110,7 @@
             this.txtadmin.Name = "txtadmin";
             this.txtadmin.Size = new System.Drawing.Size(166, 21);
             this.txtadmin.TabIndex = 6;
-            this.txtadmin.Text = "Enter Passcode";
+            this.txtadmin.Text = "Enter Passcode!";
             this.txtadmin.Click += new System.EventHandler(this.txtpassadmin_Click);
             this.txtadmin.TextChanged += new System.EventHandler(this.txtpassadmin_TextChanged);
             this.txtadmin.Enter += new System.EventHandler(this.txtpassadmin_Enter);
@@ -134,7 +134,7 @@
             // 
             this.cmdrepairid.BackColor = System.Drawing.Color.Honeydew;
             this.cmdrepairid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdrepairid.Location = new System.Drawing.Point(469, 250);
+            this.cmdrepairid.Location = new System.Drawing.Point(451, 250);
             this.cmdrepairid.Name = "cmdrepairid";
             this.cmdrepairid.Size = new System.Drawing.Size(174, 31);
             this.cmdrepairid.TabIndex = 27;

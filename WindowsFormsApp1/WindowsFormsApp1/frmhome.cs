@@ -108,9 +108,9 @@ namespace WindowsFormsApp1
             bool valid = false;
             Myserver.Service1 server = new Myserver.Service1();
             List<Myserver.Repairer> list = server.Get_repairers_list().ToList<Myserver.Repairer>();
-            foreach(Myserver.Repairer r in list)
+            foreach (Myserver.Repairer r in list)
             {
-                if(txtrepair.Text == r.Id.ToString())
+                if (txtrepair.Text == r.Id.ToString())
                 {
                     {
                         valid = true;
@@ -122,16 +122,14 @@ namespace WindowsFormsApp1
             if(valid== true)
             {
                 MessageBox.Show("Login Successful!");
-                frmrepairPortal frm = new frmrepairPortal();
-                this.Hide();
-                frm.Show();
             }
             else
             {
                 MessageBox.Show("Invalid!");
+                txtrepair.Hide();
+                txtrepair.Text = "Enter Passcode!";
+                cmdrepairid.Hide();
             }
-            txtrepair.Hide();
-            cmdrepairid.Hide();
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
@@ -141,22 +139,19 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Myserver.Service1 server = new Myserver.Service1();
-            Myserver.Admin admin = server.get_admin();
-            if(txtadmin.Text == admin.Id)
+            Myserver.Admin admin = new Myserver.Admin();
+            if(txtadmin.Text=="0321")
             {
+                txtadmin.Hide();
+                txtadmin.Text = "Enter Passcode!";
                 frmadmin frm = new frmadmin();
                 this.Hide();
                 frm.Show();
-                txtadmin.Hide();
-                cmdadminId.Hide();
             }
             else
             {
                 MessageBox.Show("Invalid!");
             }
-            txtadmin.Hide();
-            cmdadminId.Hide();
         }
     }
 }
