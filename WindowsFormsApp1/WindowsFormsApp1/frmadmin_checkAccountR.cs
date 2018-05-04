@@ -31,7 +31,9 @@ namespace WindowsFormsApp1
 
         private void frmadmin_checkAccountR_Load(object sender, EventArgs e)
         {
-
+            BindingSource S = new BindingSource();
+            S.DataSource = Utility.selected_repairer;
+            dataGridView1.DataSource = S;
         }
 
         private void cmdhome_Click(object sender, EventArgs e)

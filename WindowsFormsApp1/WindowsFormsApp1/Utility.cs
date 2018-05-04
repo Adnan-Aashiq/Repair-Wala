@@ -11,5 +11,6 @@ namespace WindowsFormsApp1
         public static Myserver.client curr_login_client;
         public static Myserver.client curr_reg_client;
         public static Myserver.Repairer curr_repairer;
+        public static Myserver.Repairer selected_repairer;
     }
 }

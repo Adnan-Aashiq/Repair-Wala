@@ -55,6 +55,8 @@ namespace WindowsFormsApp1.Myserver {
         
         private System.Threading.SendOrPostCallback remove_orderOperationCompleted;
         
+        private System.Threading.SendOrPostCallback del_repairerOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -135,6 +137,9 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public event remove_orderCompletedEventHandler remove_orderCompleted;
+        
+        /// <remarks/>
+        public event del_repairerCompletedEventHandler del_repairerCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -555,6 +560,36 @@ namespace WindowsFormsApp1.Myserver {
             if ((this.remove_orderCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.remove_orderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/del_repairer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void del_repairer(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified) {
+            this.Invoke("del_repairer", new object[] {
+                        id,
+                        idSpecified});
+        }
+        
+        /// <remarks/>
+        public void del_repairerAsync(int id, bool idSpecified) {
+            this.del_repairerAsync(id, idSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void del_repairerAsync(int id, bool idSpecified, object userState) {
+            if ((this.del_repairerOperationCompleted == null)) {
+                this.del_repairerOperationCompleted = new System.Threading.SendOrPostCallback(this.Ondel_repairerOperationCompleted);
+            }
+            this.InvokeAsync("del_repairer", new object[] {
+                        id,
+                        idSpecified}, this.del_repairerOperationCompleted, userState);
+        }
+        
+        private void Ondel_repairerOperationCompleted(object arg) {
+            if ((this.del_repairerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.del_repairerCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1285,6 +1320,10 @@ namespace WindowsFormsApp1.Myserver {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void remove_orderCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void del_repairerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
