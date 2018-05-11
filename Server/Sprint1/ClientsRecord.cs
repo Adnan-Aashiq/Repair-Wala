@@ -53,6 +53,22 @@ namespace Sprint1
             }
             return cl;
         }
+        public static bool feedback(client c,string comment,string complaint,string rate)
+        {
+            bool status = false;
+            foreach(client cl in clients)
+            {
+                if(c.Id_client == cl.Id_client)
+                {
+                    cl.Comment = comment;
+                    cl.Complaint = complaint;
+                    cl.Rate = rate;
+                    status = true;
+                    break;
+                }
+            }
+            return status;
+        }
 
     }
 

@@ -208,6 +208,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="save_feedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Sprint1" minOccurs="0" name="c" nillable="true" type="q11:client" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="complaint" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="save_feedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="save_feedbackResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -225,14 +242,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Sprint1" minOccurs="0" name="composite" nillable="true" type="q11:CompositeType" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Sprint1" minOccurs="0" name="composite" nillable="true" type="q12:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Sprint1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q12:CompositeType" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Sprint1" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q13:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

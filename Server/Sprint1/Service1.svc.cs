@@ -162,5 +162,11 @@ namespace Sprint1
             bool x = RepairersRecords.edit(r);
             return x;
         }
+
+        public bool save_feedback(client c, string comment, string complaint,string rate)
+        {
+            bool x = ClientsRecord.feedback(c, comment, complaint, rate);
+            return x;
+        }
     }
 }

@@ -59,6 +59,8 @@ namespace WindowsFormsApp1.Myserver {
         
         private System.Threading.SendOrPostCallback edit_repairerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback save_feedbackOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -145,6 +147,9 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public event edit_repairerCompletedEventHandler edit_repairerCompleted;
+        
+        /// <remarks/>
+        public event save_feedbackCompletedEventHandler save_feedbackCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -629,6 +634,42 @@ namespace WindowsFormsApp1.Myserver {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/save_feedback", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void save_feedback([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] client c, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string comment, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string complaint, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string rate, out bool save_feedbackResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool save_feedbackResultSpecified) {
+            object[] results = this.Invoke("save_feedback", new object[] {
+                        c,
+                        comment,
+                        complaint,
+                        rate});
+            save_feedbackResult = ((bool)(results[0]));
+            save_feedbackResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void save_feedbackAsync(client c, string comment, string complaint, string rate) {
+            this.save_feedbackAsync(c, comment, complaint, rate, null);
+        }
+        
+        /// <remarks/>
+        public void save_feedbackAsync(client c, string comment, string complaint, string rate, object userState) {
+            if ((this.save_feedbackOperationCompleted == null)) {
+                this.save_feedbackOperationCompleted = new System.Threading.SendOrPostCallback(this.Onsave_feedbackOperationCompleted);
+            }
+            this.InvokeAsync("save_feedback", new object[] {
+                        c,
+                        comment,
+                        complaint,
+                        rate}, this.save_feedbackOperationCompleted, userState);
+        }
+        
+        private void Onsave_feedbackOperationCompleted(object arg) {
+            if ((this.save_feedbackCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.save_feedbackCompleted(this, new save_feedbackCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetData(int value, [System.Xml.Serialization.XmlIgnoreAttribute()] bool valueSpecified) {
@@ -737,6 +778,8 @@ namespace WindowsFormsApp1.Myserver {
         
         private string problemField;
         
+        private string rateField;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string Address {
@@ -843,6 +886,17 @@ namespace WindowsFormsApp1.Myserver {
             }
             set {
                 this.problemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Rate {
+            get {
+                return this.rateField;
+            }
+            set {
+                this.rateField = value;
             }
         }
     }
@@ -1387,6 +1441,40 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public bool edit_repairerResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void save_feedbackCompletedEventHandler(object sender, save_feedbackCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class save_feedbackCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal save_feedbackCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool save_feedbackResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool save_feedbackResultSpecified {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));

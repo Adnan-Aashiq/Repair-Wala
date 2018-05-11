@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmdselect = new System.Windows.Forms.Button();
             this.cmddone = new System.Windows.Forms.Button();
+            this.cmdrefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -166,6 +167,18 @@
             this.cmddone.UseVisualStyleBackColor = false;
             this.cmddone.Click += new System.EventHandler(this.cmddone_Click);
             // 
+            // cmdrefresh
+            // 
+            this.cmdrefresh.BackColor = System.Drawing.Color.Honeydew;
+            this.cmdrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdrefresh.Location = new System.Drawing.Point(723, 44);
+            this.cmdrefresh.Name = "cmdrefresh";
+            this.cmdrefresh.Size = new System.Drawing.Size(107, 31);
+            this.cmdrefresh.TabIndex = 37;
+            this.cmdrefresh.Text = "Refresh";
+            this.cmdrefresh.UseVisualStyleBackColor = false;
+            this.cmdrefresh.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmrepairPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -173,6 +186,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 405);
+            this.Controls.Add(this.cmdrefresh);
             this.Controls.Add(this.cmddone);
             this.Controls.Add(this.cmdselect);
             this.Controls.Add(this.label2);
@@ -208,5 +222,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cmdselect;
         private System.Windows.Forms.Button cmddone;
+        private System.Windows.Forms.Button cmdrefresh;
     }
 }

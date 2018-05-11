@@ -16,7 +16,7 @@ namespace Sprint1
         private int id_client;
         private string name_client;
         private string problem;
-        //private int rate;
+        private string rate;
         private string mail;
         
         [DataMember]   //Step3
@@ -140,9 +140,22 @@ namespace Sprint1
                 id_client = value;
             }
         }
+        [DataMember]
+        public string Rate
+        {
+            get
+            {
+                return rate;
+            }
 
-        
-        
+            set
+            {
+                rate = value;
+            }
+        }
+
+
+
 
         /*public static Repairer Repair()
         {

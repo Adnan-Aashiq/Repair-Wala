@@ -81,6 +81,7 @@ namespace WindowsFormsApp1
             txtcproblem.Hide();
             cmdfeedback.Hide();
             cmdrepair.Hide();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
