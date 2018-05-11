@@ -295,7 +295,28 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            Myserver.Repairer re = new Myserver.Repairer();
+            Myserver.Service1 server = new Myserver.Service1();
+            int id = int.Parse(txtrexist.Text);
+            bool spec = true;
+            re = server.Search_Repairer(id, spec);
+            Utility.selected_repairer = re;
+            if(comboBox1.Text == "Check Account")
+            {
+                frmadmin_checkAccountR frm = new frmadmin_checkAccountR();
+                this.Hide();
+                frm.Show();
+            }
+            if(comboBox1.Text == "Delete Account")
+            {
+                server.del_repairer(id,spec);
+                MessageBox.Show("Account Deleted!");
+            }
+            if (comboBox1.Text == "Issue Warning")
+            {
+                
+                MessageBox.Show("Warning Issued!");
+            }
         }
     }
 }

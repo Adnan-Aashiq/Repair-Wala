@@ -31,13 +31,28 @@ namespace WindowsFormsApp1
 
         private void frmadmin_checkAccountR_Load(object sender, EventArgs e)
         {
+            BindingSource S = new BindingSource();
+            S.DataSource = Utility.selected_repairer;
+            dataGridView1.DataSource = S;
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
         {
-            frmrepairPortal frm = frmrepairPortal.get_instance();
+            frmadmin frm =new frmadmin();
             this.Hide();
             frm.Show();
+        }
+
+        private void cmdedit_Click(object sender, EventArgs e)
+        {
+            Myserver.Service1 server = new Myserver.Service1();
+            bool status, x = true;
+            server.edit_repairer(Utility.selected_repairer,out status,out x);
+            if(status == true)
+            {
+                MessageBox.Show("Repairer Details Saved!");
+            } 
+           
         }
     }
 }

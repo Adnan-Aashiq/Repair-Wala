@@ -57,6 +57,8 @@ namespace WindowsFormsApp1.Myserver {
         
         private System.Threading.SendOrPostCallback del_repairerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback edit_repairerOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -140,6 +142,9 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public event del_repairerCompletedEventHandler del_repairerCompleted;
+        
+        /// <remarks/>
+        public event edit_repairerCompletedEventHandler edit_repairerCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -590,6 +595,36 @@ namespace WindowsFormsApp1.Myserver {
             if ((this.del_repairerCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.del_repairerCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/edit_repairer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void edit_repairer([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Repairer r, out bool edit_repairerResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool edit_repairerResultSpecified) {
+            object[] results = this.Invoke("edit_repairer", new object[] {
+                        r});
+            edit_repairerResult = ((bool)(results[0]));
+            edit_repairerResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void edit_repairerAsync(Repairer r) {
+            this.edit_repairerAsync(r, null);
+        }
+        
+        /// <remarks/>
+        public void edit_repairerAsync(Repairer r, object userState) {
+            if ((this.edit_repairerOperationCompleted == null)) {
+                this.edit_repairerOperationCompleted = new System.Threading.SendOrPostCallback(this.Onedit_repairerOperationCompleted);
+            }
+            this.InvokeAsync("edit_repairer", new object[] {
+                        r}, this.edit_repairerOperationCompleted, userState);
+        }
+        
+        private void Onedit_repairerOperationCompleted(object arg) {
+            if ((this.edit_repairerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.edit_repairerCompleted(this, new edit_repairerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1324,6 +1359,40 @@ namespace WindowsFormsApp1.Myserver {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
     public delegate void del_repairerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void edit_repairerCompletedEventHandler(object sender, edit_repairerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class edit_repairerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal edit_repairerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool edit_repairerResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool edit_repairerResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]

@@ -91,6 +91,12 @@
   <wsdl:message name="IService1_del_repairer_OutputMessage">
     <wsdl:part name="parameters" element="tns:del_repairerResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_edit_repairer_InputMessage">
+    <wsdl:part name="parameters" element="tns:edit_repairer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_edit_repairer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:edit_repairerResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -159,6 +165,10 @@
     <wsdl:operation name="del_repairer">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/del_repairer" message="tns:IService1_del_repairer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/del_repairerResponse" message="tns:IService1_del_repairer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="edit_repairer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/edit_repairer" message="tns:IService1_edit_repairer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/edit_repairerResponse" message="tns:IService1_edit_repairer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -290,6 +300,15 @@
     </wsdl:operation>
     <wsdl:operation name="del_repairer">
       <soap:operation soapAction="http://tempuri.org/IService1/del_repairer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit_repairer">
+      <soap:operation soapAction="http://tempuri.org/IService1/edit_repairer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

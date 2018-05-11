@@ -19,6 +19,21 @@ namespace Sprint1
             r.Id = id;
             RepairersRecords.repairers.Add(r);
         }
+        public static bool edit(Repairer r)
+        {
+            bool status = false;
+            foreach(Repairer rep in repairers)
+            {
+                if(rep.Person_id1 == r.Person_id1)
+                {
+                    repairers.Remove(rep);
+                    repairers.Add(r);
+                    status = true;
+                    break;
+                }
+            }
+            return status;
+        }
         /*public static Repairer Get_id_repairer(int id)
         {
 

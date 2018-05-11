@@ -43,6 +43,8 @@ namespace Sprint1
 
         [OperationContract]
         void del_repairer(int id);
+        [OperationContract]
+        bool edit_repairer(Repairer r);
         /*[OperationContract]
         bool Change_Password(string s);
         Repairer Get_id_repairer(int id);
