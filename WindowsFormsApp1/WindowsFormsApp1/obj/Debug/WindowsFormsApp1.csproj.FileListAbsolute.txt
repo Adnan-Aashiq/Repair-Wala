@@ -106,6 +106,6 @@ C:\Users\Engr\Desktop\repair wala\sprint3jun\WindowsFormsApp1\WindowsFormsApp1\o
 C:\Users\Engr\Desktop\repair wala\sprint3jun\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\Engr\Desktop\repair wala\sprint3jun\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.frmrepairPortal.resources
 C:\Users\Engr\Desktop\repair wala\sprint3jun\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
-C:\Users\Engr\Desktop\repair wala\sprint3rafay\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
-C:\Users\Engr\Desktop\repair wala\sprint3rafay\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
-C:\Users\Engr\Desktop\repair wala\sprint3rafay\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Engr\Desktop\repair wala\sprint3shb\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Engr\Desktop\repair wala\sprint3shb\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Engr\Desktop\repair wala\sprint3shb\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

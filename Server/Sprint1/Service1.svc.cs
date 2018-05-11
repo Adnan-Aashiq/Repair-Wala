@@ -153,8 +153,6 @@ namespace Sprint1
 
         public void del_repairer(int id)
         {
-            Repairer r = RepairersRecords.Search_Repairer(id);
-            RepairersRecords.repairers.Remove(r);
         }
     }
 }
