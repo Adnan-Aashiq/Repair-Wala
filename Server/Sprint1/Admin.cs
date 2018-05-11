@@ -8,10 +8,11 @@ namespace Sprint1
     [DataContract]
     public class Admin
     {
-        private string id = "12345";
-        private string name = "Syed Junaid Ali";
+        private static bool start = false;
+        private static string id = "12345";
+        private static string name = "Sir Awais";
         [DataMember]
-        public string Id
+        public static string Id
         {
             get
             {
@@ -24,7 +25,7 @@ namespace Sprint1
             }
         }
         [DataMember]
-        public string Name
+        public static string Name
         {
             get
             {
@@ -36,5 +37,7 @@ namespace Sprint1
                 name = value;
             }
         }
+        [DataMember]
+        public static bool Start { get => start; set => start = value; }
     }
 }

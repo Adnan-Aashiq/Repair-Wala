@@ -29,3 +29,17 @@ C:\Users\Engr\Desktop\repair wala\sprint4adnan\Server\Sprint1\obj\Debug\Sprint1.
 C:\Users\Engr\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.dll.config
 C:\Users\Engr\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.dll
 C:\Users\Engr\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.pdb
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.dll.config
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.dll
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\bin\Sprint1.pdb
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\obj\Debug\Sprint1.csprojResolveAssemblyReference.cache
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\obj\Debug\Sprint1.csproj.CoreCompileInputs.cache
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\obj\Debug\Sprint1.dll
+C:\Users\abdul\Desktop\repair wala\sprint4adnan\Server\Sprint1\obj\Debug\Sprint1.pdb
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\bin\Sprint1.dll.config
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\bin\Sprint1.dll
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\bin\Sprint1.pdb
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\obj\Debug\Sprint1.csprojResolveAssemblyReference.cache
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\obj\Debug\Sprint1.csproj.CoreCompileInputs.cache
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\obj\Debug\Sprint1.dll
+C:\Users\abdul\Desktop\repair wala\sprint4jun(FINAL)\Server\Sprint1\obj\Debug\Sprint1.pdb

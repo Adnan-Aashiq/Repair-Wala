@@ -34,6 +34,9 @@ namespace WindowsFormsApp1
             BindingSource S = new BindingSource();
             S.DataSource = Utility.selected_repairer;
             dataGridView1.DataSource = S;
+            //dataGridView1.Columns.Remove("Account Specified");
+            dataGridView1.Columns.RemoveAt(5);
+            dataGridView1.Columns.RemoveAt(1);
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
@@ -41,6 +44,14 @@ namespace WindowsFormsApp1
             frmadmin frm = frmadmin.get_instance();
             this.Hide();
             frm.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            //dataGridView1.Columns["Id Specified"].Visible = false;
+            //dataGridView1.Columns.RemoveAt(5);
+            
         }
     }
 }

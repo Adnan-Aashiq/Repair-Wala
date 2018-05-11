@@ -19,10 +19,10 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Account" type="xs:int" />
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Appointment" nillable="true" type="tns:client" />
+      <xs:element minOccurs="0" name="Appointment_name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Orders1" nillable="true" type="tns:ArrayOfclient" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfclient" />
       <xs:element minOccurs="0" name="Person_id1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone_number1" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -41,10 +41,7 @@
   </xs:complexType>
   <xs:element name="ArrayOfRepairer" nillable="true" type="tns:ArrayOfRepairer" />
   <xs:complexType name="Admin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
+    <xs:sequence />
   </xs:complexType>
   <xs:element name="Admin" nillable="true" type="tns:Admin" />
   <xs:complexType name="CompositeType">

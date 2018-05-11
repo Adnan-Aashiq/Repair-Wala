@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.Myserver {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
@@ -40,8 +40,6 @@ namespace WindowsFormsApp1.Myserver {
         private System.Threading.SendOrPostCallback Repairer_NotBuzyOperationCompleted;
         
         private System.Threading.SendOrPostCallback Assign_clientOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback Appoint_clientOperationCompleted;
         
         private System.Threading.SendOrPostCallback Get_repairers_listOperationCompleted;
         
@@ -60,6 +58,14 @@ namespace WindowsFormsApp1.Myserver {
         private System.Threading.SendOrPostCallback edit_repairerOperationCompleted;
         
         private System.Threading.SendOrPostCallback save_feedbackOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback payOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback startOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback get_admin_nameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback get_admin_idOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
@@ -122,9 +128,6 @@ namespace WindowsFormsApp1.Myserver {
         public event Assign_clientCompletedEventHandler Assign_clientCompleted;
         
         /// <remarks/>
-        public event Appoint_clientCompletedEventHandler Appoint_clientCompleted;
-        
-        /// <remarks/>
         public event Get_repairers_listCompletedEventHandler Get_repairers_listCompleted;
         
         /// <remarks/>
@@ -150,6 +153,18 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         public event save_feedbackCompletedEventHandler save_feedbackCompleted;
+        
+        /// <remarks/>
+        public event payCompletedEventHandler payCompleted;
+        
+        /// <remarks/>
+        public event startCompletedEventHandler startCompleted;
+        
+        /// <remarks/>
+        public event get_admin_nameCompletedEventHandler get_admin_nameCompleted;
+        
+        /// <remarks/>
+        public event get_admin_idCompletedEventHandler get_admin_idCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -356,38 +371,6 @@ namespace WindowsFormsApp1.Myserver {
             if ((this.Assign_clientCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Assign_clientCompleted(this, new Assign_clientCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Appoint_client", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Appoint_client(int id, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idSpecified, out bool Appoint_clientResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool Appoint_clientResultSpecified) {
-            object[] results = this.Invoke("Appoint_client", new object[] {
-                        id,
-                        idSpecified});
-            Appoint_clientResult = ((bool)(results[0]));
-            Appoint_clientResultSpecified = ((bool)(results[1]));
-        }
-        
-        /// <remarks/>
-        public void Appoint_clientAsync(int id, bool idSpecified) {
-            this.Appoint_clientAsync(id, idSpecified, null);
-        }
-        
-        /// <remarks/>
-        public void Appoint_clientAsync(int id, bool idSpecified, object userState) {
-            if ((this.Appoint_clientOperationCompleted == null)) {
-                this.Appoint_clientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAppoint_clientOperationCompleted);
-            }
-            this.InvokeAsync("Appoint_client", new object[] {
-                        id,
-                        idSpecified}, this.Appoint_clientOperationCompleted, userState);
-        }
-        
-        private void OnAppoint_clientOperationCompleted(object arg) {
-            if ((this.Appoint_clientCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.Appoint_clientCompleted(this, new Appoint_clientCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -666,6 +649,124 @@ namespace WindowsFormsApp1.Myserver {
             if ((this.save_feedbackCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.save_feedbackCompleted(this, new save_feedbackCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/pay", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void pay([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] client c, int amount, [System.Xml.Serialization.XmlIgnoreAttribute()] bool amountSpecified, out bool payResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool payResultSpecified) {
+            object[] results = this.Invoke("pay", new object[] {
+                        c,
+                        amount,
+                        amountSpecified});
+            payResult = ((bool)(results[0]));
+            payResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void payAsync(client c, int amount, bool amountSpecified) {
+            this.payAsync(c, amount, amountSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void payAsync(client c, int amount, bool amountSpecified, object userState) {
+            if ((this.payOperationCompleted == null)) {
+                this.payOperationCompleted = new System.Threading.SendOrPostCallback(this.OnpayOperationCompleted);
+            }
+            this.InvokeAsync("pay", new object[] {
+                        c,
+                        amount,
+                        amountSpecified}, this.payOperationCompleted, userState);
+        }
+        
+        private void OnpayOperationCompleted(object arg) {
+            if ((this.payCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.payCompleted(this, new payCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/start", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void start(out bool startResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool startResultSpecified) {
+            object[] results = this.Invoke("start", new object[0]);
+            startResult = ((bool)(results[0]));
+            startResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void startAsync() {
+            this.startAsync(null);
+        }
+        
+        /// <remarks/>
+        public void startAsync(object userState) {
+            if ((this.startOperationCompleted == null)) {
+                this.startOperationCompleted = new System.Threading.SendOrPostCallback(this.OnstartOperationCompleted);
+            }
+            this.InvokeAsync("start", new object[0], this.startOperationCompleted, userState);
+        }
+        
+        private void OnstartOperationCompleted(object arg) {
+            if ((this.startCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.startCompleted(this, new startCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/get_admin_name", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string get_admin_name() {
+            object[] results = this.Invoke("get_admin_name", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void get_admin_nameAsync() {
+            this.get_admin_nameAsync(null);
+        }
+        
+        /// <remarks/>
+        public void get_admin_nameAsync(object userState) {
+            if ((this.get_admin_nameOperationCompleted == null)) {
+                this.get_admin_nameOperationCompleted = new System.Threading.SendOrPostCallback(this.Onget_admin_nameOperationCompleted);
+            }
+            this.InvokeAsync("get_admin_name", new object[0], this.get_admin_nameOperationCompleted, userState);
+        }
+        
+        private void Onget_admin_nameOperationCompleted(object arg) {
+            if ((this.get_admin_nameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.get_admin_nameCompleted(this, new get_admin_nameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/get_admin_id", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string get_admin_id() {
+            object[] results = this.Invoke("get_admin_id", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void get_admin_idAsync() {
+            this.get_admin_idAsync(null);
+        }
+        
+        /// <remarks/>
+        public void get_admin_idAsync(object userState) {
+            if ((this.get_admin_idOperationCompleted == null)) {
+                this.get_admin_idOperationCompleted = new System.Threading.SendOrPostCallback(this.Onget_admin_idOperationCompleted);
+            }
+            this.InvokeAsync("get_admin_id", new object[0], this.get_admin_idOperationCompleted, userState);
+        }
+        
+        private void Onget_admin_idOperationCompleted(object arg) {
+            if ((this.get_admin_idCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.get_admin_idCompleted(this, new get_admin_idCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -955,32 +1056,6 @@ namespace WindowsFormsApp1.Myserver {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Sprint1")]
     public partial class Admin {
-        
-        private string idField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
     }
     
     /// <remarks/>
@@ -997,7 +1072,7 @@ namespace WindowsFormsApp1.Myserver {
         
         private string addressField;
         
-        private client appointmentField;
+        private string appointment_nameField;
         
         private int idField;
         
@@ -1005,7 +1080,7 @@ namespace WindowsFormsApp1.Myserver {
         
         private string nameField;
         
-        private client[] orders1Field;
+        private client[] ordersField;
         
         private string person_id1Field;
         
@@ -1045,12 +1120,12 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public client Appointment {
+        public string Appointment_name {
             get {
-                return this.appointmentField;
+                return this.appointment_nameField;
             }
             set {
-                this.appointmentField = value;
+                this.appointment_nameField = value;
             }
         }
         
@@ -1088,12 +1163,12 @@ namespace WindowsFormsApp1.Myserver {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public client[] Orders1 {
+        public client[] Orders {
             get {
-                return this.orders1Field;
+                return this.ordersField;
             }
             set {
-                this.orders1Field = value;
+                this.ordersField = value;
             }
         }
         
@@ -1121,15 +1196,15 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Add_RepairerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void is_loginCompletedEventHandler(object sender, is_loginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class is_loginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1159,11 +1234,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Add_ClientsCompletedEventHandler(object sender, Add_ClientsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Add_ClientsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1193,11 +1268,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Search_ClientCompletedEventHandler(object sender, Search_ClientCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Search_ClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1219,11 +1294,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Repairer_NotBuzyCompletedEventHandler(object sender, Repairer_NotBuzyCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Repairer_NotBuzyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1253,11 +1328,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Assign_clientCompletedEventHandler(object sender, Assign_clientCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Assign_clientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1287,45 +1362,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void Appoint_clientCompletedEventHandler(object sender, Appoint_clientCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Appoint_clientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Appoint_clientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Appoint_clientResult {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-        
-        /// <remarks/>
-        public bool Appoint_clientResultSpecified {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Get_repairers_listCompletedEventHandler(object sender, Get_repairers_listCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Get_repairers_listCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1347,11 +1388,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Get_client_listCompletedEventHandler(object sender, Get_client_listCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Get_client_listCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1373,19 +1414,19 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void make_adminCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void fix_appCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void Search_RepairerCompletedEventHandler(object sender, Search_RepairerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Search_RepairerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1407,19 +1448,19 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void remove_orderCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void del_repairerCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void edit_repairerCompletedEventHandler(object sender, edit_repairerCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class edit_repairerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1449,11 +1490,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void save_feedbackCompletedEventHandler(object sender, save_feedbackCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class save_feedbackCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1483,11 +1524,131 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void payCompletedEventHandler(object sender, payCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class payCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal payCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool payResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool payResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void startCompletedEventHandler(object sender, startCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class startCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal startCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool startResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool startResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void get_admin_nameCompletedEventHandler(object sender, get_admin_nameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class get_admin_nameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal get_admin_nameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void get_admin_idCompletedEventHandler(object sender, get_admin_idCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class get_admin_idCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal get_admin_idCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1509,11 +1670,11 @@ namespace WindowsFormsApp1.Myserver {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void GetDataUsingDataContractCompletedEventHandler(object sender, GetDataUsingDataContractCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDataUsingDataContractCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

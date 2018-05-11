@@ -17,7 +17,7 @@ namespace Sprint1
             r.Phone_number1 = cellno;
             r.Person_id1 = cnic;
             r.Id = id;
-            RepairersRecords.repairers.Add(r);
+            repairers.Add(r);
         }
         /*public static Repairer Get_id_repairer(int id)
         {
@@ -34,7 +34,7 @@ namespace Sprint1
         public static bool Repairer_NotBusy(Repairer r)
         {
             bool status=false;
-            if(r.Appointment == null)
+            if(r.Appointment_name == null)
             {
                 status = true;
             }
@@ -43,13 +43,13 @@ namespace Sprint1
         public static bool Assign_client(client c)      //***
         {
             bool msg = false;
-            foreach(Repairer r in RepairersRecords.repairers)
+            foreach(Repairer r in repairers)
             {
-                if(r.Orders1.Count() < 3)
+                if(r.Orders.Count() < 3)
                 {
                     if(Repairer_NotBusy(r)== true)
                     {
-                        r.Orders1.Add(c);
+                        r.Orders.Add(c);
                         msg = true;
                         break;
                     }
@@ -57,19 +57,7 @@ namespace Sprint1
             }
             return msg;
         }
-        public static bool Appoint_client(int id)
-        {
-            bool msg=false;
-            foreach(client c in ClientsRecord.clients)
-            {
-                if(c.Id_client == id)
-                {
-                    //Utility.curr_repairer.Appointment = c;
-                    msg = true;
-                }
-            }
-            return msg;
-        }
+        
         public static bool edit(Repairer r)
         {
             bool status = false;
@@ -88,7 +76,7 @@ namespace Sprint1
         public static Repairer Search_Repairer(int id)
         {
             Repairer rp = new Repairer();
-            foreach(Repairer r in RepairersRecords.repairers)
+            foreach(Repairer r in repairers)
             {
                 if (r.Id == id)
                 {
@@ -97,6 +85,25 @@ namespace Sprint1
             }
             return rp;
         }
+        public static void appoint_client(client c,int id)
+        {
+            Repairer r = Search_Repairer(id);
+            r.Appointment_name = c.Name_client;
+            edit(r);
 
+        }
+        public static bool pay_amount(client c,int am)
+        {
+            bool stat = false;
+            foreach(Repairer r in repairers)
+            {
+                if(r.Appointment_name == c.Name_client)
+                {
+                    r.Account = r.Account + am;
+                    stat = true;
+                }
+            }
+            return stat;
+        }
     }
 }

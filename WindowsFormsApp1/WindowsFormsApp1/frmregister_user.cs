@@ -132,13 +132,12 @@ namespace WindowsFormsApp1
 
         private void txtcdevice_TextChanged(object sender, EventArgs e)
         {
-            txtcdevice.Clear();
+            
         }
 
         private void txtcproblem_TextChanged(object sender, EventArgs e)
         {
-            txtcproblem.Clear();
-        }
+                   }
 
         private void txtcid_Click(object sender, EventArgs e)
         {
@@ -147,17 +146,29 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Myserver.Service1 server = new Myserver.Service1();
-            bool done;
-            bool pass;
-            server.Assign_client(Utility.curr_login_client, out done, out pass);
-            if (done == true)
+            if(txtcproblem.Text == "Enter Problem" || txtcdevice.Text == "Enter Device")
             {
-                MessageBox.Show("Your Request has been sent!");
+                MessageBox.Show("Enter Problem and Device first!");
             }
             else
             {
-                MessageBox.Show("System Failure!");
+                Myserver.Service1 server = new Myserver.Service1();
+                bool done;
+                bool pass;
+                Myserver.client edi = new Myserver.client();
+                edi = Utility.curr_login_client;
+                edi.Device = txtcdevice.Text;
+                edi.Problem = txtcproblem.Text;
+                Utility.curr_login_client = edi;
+                server.Assign_client(Utility.curr_login_client, out done, out pass);
+                if (done == true)
+                {
+                    MessageBox.Show("Your Request has been sent!");
+                }
+                else
+                {
+                    MessageBox.Show("System Failure!");
+                }
             }
             /*Myserver.client c = new Myserver.client();
             Myserver.Service1 server = new Myserver.Service1();

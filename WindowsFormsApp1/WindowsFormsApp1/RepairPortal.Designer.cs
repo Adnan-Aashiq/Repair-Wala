@@ -39,9 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmdselect = new System.Windows.Forms.Button();
             this.cmddone = new System.Windows.Forms.Button();
-            this.cmdrefresh = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblaccount = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtid
@@ -73,6 +76,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Wheat;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 94);
@@ -167,17 +171,35 @@
             this.cmddone.UseVisualStyleBackColor = false;
             this.cmddone.Click += new System.EventHandler(this.cmddone_Click);
             // 
-            // cmdrefresh
+            // label3
             // 
-            this.cmdrefresh.BackColor = System.Drawing.Color.Honeydew;
-            this.cmdrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdrefresh.Location = new System.Drawing.Point(712, 57);
-            this.cmdrefresh.Name = "cmdrefresh";
-            this.cmdrefresh.Size = new System.Drawing.Size(103, 31);
-            this.cmdrefresh.TabIndex = 37;
-            this.cmdrefresh.Text = "Refresh";
-            this.cmdrefresh.UseVisualStyleBackColor = false;
-            this.cmdrefresh.Click += new System.EventHandler(this.cmdrefresh_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(321, 63);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label3.Size = new System.Drawing.Size(236, 19);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Your Current Account Balance is";
+            // 
+            // lblaccount
+            // 
+            this.lblaccount.AutoSize = true;
+            this.lblaccount.Location = new System.Drawing.Point(554, 63);
+            this.lblaccount.Name = "lblaccount";
+            this.lblaccount.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblaccount.Size = new System.Drawing.Size(20, 19);
+            this.lblaccount.TabIndex = 39;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.if_sync_126579;
+            this.pictureBox1.Location = new System.Drawing.Point(776, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmrepairPortal
             // 
@@ -186,7 +208,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 405);
-            this.Controls.Add(this.cmdrefresh);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblaccount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmddone);
             this.Controls.Add(this.cmdselect);
             this.Controls.Add(this.label2);
@@ -206,6 +230,7 @@
             this.Load += new System.EventHandler(this.frmrepairPortal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +247,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cmdselect;
         private System.Windows.Forms.Button cmddone;
-        private System.Windows.Forms.Button cmdrefresh;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblaccount;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

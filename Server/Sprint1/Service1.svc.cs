@@ -43,11 +43,7 @@ namespace Sprint1
             bool msg = RepairersRecords.Assign_client(c);
             return msg;
         }
-        public bool Appoint_client(int id)
-        {
-            bool msg = RepairersRecords.Appoint_client(id);
-            return msg;
-        }
+        
         /*public Repairer Get_id_repairer(int id)
         {
 
@@ -129,8 +125,7 @@ namespace Sprint1
 
         public void fix_app(client c, int id)
         {
-            Repairer r = RepairersRecords.Search_Repairer(id);
-            r.Appointment = c;
+            RepairersRecords.appoint_client(c, id);
         }
 
         public Repairer Search_Repairer(int id)
@@ -142,11 +137,11 @@ namespace Sprint1
         public void remove_order(client c,int id)
         {
             Repairer r =  RepairersRecords.Search_Repairer(id);
-            foreach(client cl in r.Orders1)
+            foreach(client cl in r.Orders)
             {
                 if(c==cl)
                 {
-                    r.Orders1.Remove(cl);
+                    r.Orders.Remove(cl);
                 }
             }
         }
@@ -166,6 +161,36 @@ namespace Sprint1
         {
             bool x = ClientsRecord.feedback(c, comment, complaint, rate);
             return x;
+        }
+
+        public bool pay(client c, int amount)
+        {
+            bool stat = RepairersRecords.pay_amount(c,amount);
+            return stat;
+        }
+
+        public bool start()
+        {
+            if (Admin.Start == false)
+            {
+                Admin.Start = true;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+        public string get_admin_name()
+        {
+            return Admin.Name;
+        }
+
+        public string get_admin_id()
+        {
+            return Admin.Id;
         }
     }
 }

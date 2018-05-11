@@ -95,8 +95,10 @@ namespace WindowsFormsApp1
         private void frmrepairPortal_Load(object sender, EventArgs e)
         {
                 BindingSource S = new BindingSource();
-                S.DataSource = Utility.curr_repairer.Orders1;
+                S.DataSource = Utility.curr_repairer.Orders;
                 dataGridView1.DataSource = S;
+            lblaccount.Text = Utility.curr_repairer.Account.ToString();
+           dataGridView1.Columns.RemoveAt(6);
         }
 
         private void txtid_TextChanged(object sender, EventArgs e)
@@ -165,9 +167,8 @@ namespace WindowsFormsApp1
                     if (c.Id_client.ToString() == txtid.Text)
                     {
                         bool stat = true;
-                        Utility.curr_repairer.Appointment = c;
+                        server.fix_app(c, Utility.curr_repairer.Id, stat);
                         MessageBox.Show("Appointment Fixed!");
-                        server.fix_app(c, Utility.curr_repairer.Id, id);
                     }
                 }
             }
@@ -176,7 +177,7 @@ namespace WindowsFormsApp1
         private void cmdrefresh_Click(object sender, EventArgs e)
         {
 
-            Myserver.Service1 server = new Myserver.Service1();
+           /* Myserver.Service1 server = new Myserver.Service1();
             List<Myserver.Repairer> list = server.Get_repairers_list().ToList<Myserver.Repairer>();
             if(txtid.Text == "" || txtid.Text == "Enter Id to select Order")
             {
@@ -190,13 +191,38 @@ namespace WindowsFormsApp1
                     if (r.Id == Utility.curr_repairer.Id)
                     {
                         BindingSource S = new BindingSource();
-                        S.DataSource = r.Orders1;
+                        S.DataSource = r.Orders;
                         dataGridView1.DataSource = S;
+                        lblaccount.Text = r.Account.ToString();
+                        break;
+                    }
+                }
+            }*/
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Myserver.Service1 server = new Myserver.Service1();
+            List<Myserver.Repairer> list = server.Get_repairers_list().ToList<Myserver.Repairer>();
+            if (txtid.Text == "" || txtid.Text == "Enter Id to select Order")
+            {
+                MessageBox.Show("Page can not be refreashed!");
+            }
+            else
+            {
+                foreach (Myserver.Repairer r in list)
+                {
+                    if (r.Id == Utility.curr_repairer.Id)
+                    {
+                        BindingSource S = new BindingSource();
+                        S.DataSource = r.Orders;
+                        dataGridView1.DataSource = S;
+                        lblaccount.Text = r.Account.ToString();
                         break;
                     }
                 }
             }
-            
         }
     }
 }

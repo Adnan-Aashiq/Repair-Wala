@@ -43,12 +43,6 @@
   <wsdl:message name="IService1_Assign_client_OutputMessage">
     <wsdl:part name="parameters" element="tns:Assign_clientResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Appoint_client_InputMessage">
-    <wsdl:part name="parameters" element="tns:Appoint_client" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Appoint_client_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Appoint_clientResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_Get_repairers_list_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_repairers_list" />
   </wsdl:message>
@@ -103,6 +97,30 @@
   <wsdl:message name="IService1_save_feedback_OutputMessage">
     <wsdl:part name="parameters" element="tns:save_feedbackResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_pay_InputMessage">
+    <wsdl:part name="parameters" element="tns:pay" />
+  </wsdl:message>
+  <wsdl:message name="IService1_pay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:payResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_start_InputMessage">
+    <wsdl:part name="parameters" element="tns:start" />
+  </wsdl:message>
+  <wsdl:message name="IService1_start_OutputMessage">
+    <wsdl:part name="parameters" element="tns:startResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_admin_name_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_admin_name" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_admin_name_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_admin_nameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_admin_id_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_admin_id" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_admin_id_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_admin_idResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -140,10 +158,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Assign_client" message="tns:IService1_Assign_client_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Assign_clientResponse" message="tns:IService1_Assign_client_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Appoint_client">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Appoint_client" message="tns:IService1_Appoint_client_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Appoint_clientResponse" message="tns:IService1_Appoint_client_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Get_repairers_list">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Get_repairers_list" message="tns:IService1_Get_repairers_list_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Get_repairers_listResponse" message="tns:IService1_Get_repairers_list_OutputMessage" />
@@ -179,6 +193,22 @@
     <wsdl:operation name="save_feedback">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/save_feedback" message="tns:IService1_save_feedback_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/save_feedbackResponse" message="tns:IService1_save_feedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/pay" message="tns:IService1_pay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/payResponse" message="tns:IService1_pay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/start" message="tns:IService1_start_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/startResponse" message="tns:IService1_start_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_admin_name">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/get_admin_name" message="tns:IService1_get_admin_name_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/get_admin_nameResponse" message="tns:IService1_get_admin_name_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_admin_id">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/get_admin_id" message="tns:IService1_get_admin_id_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/get_admin_idResponse" message="tns:IService1_get_admin_id_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -238,15 +268,6 @@
     </wsdl:operation>
     <wsdl:operation name="Assign_client">
       <soap:operation soapAction="http://tempuri.org/IService1/Assign_client" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Appoint_client">
-      <soap:operation soapAction="http://tempuri.org/IService1/Appoint_client" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -328,6 +349,42 @@
     </wsdl:operation>
     <wsdl:operation name="save_feedback">
       <soap:operation soapAction="http://tempuri.org/IService1/save_feedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pay">
+      <soap:operation soapAction="http://tempuri.org/IService1/pay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="start">
+      <soap:operation soapAction="http://tempuri.org/IService1/start" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_admin_name">
+      <soap:operation soapAction="http://tempuri.org/IService1/get_admin_name" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_admin_id">
+      <soap:operation soapAction="http://tempuri.org/IService1/get_admin_id" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

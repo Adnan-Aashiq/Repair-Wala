@@ -31,8 +31,8 @@ namespace WindowsFormsApp1
 
         private void frmadmin_Load(object sender, EventArgs e)
         {
-            Myserver.Admin admin = new Myserver.Admin();
-            lbladminname.Text = admin.Name;
+            Myserver.Service1 server = new Myserver.Service1();
+            lbladminname.Text = server.get_admin_name();
         }
 
         private void cmdhome_Click(object sender, EventArgs e)

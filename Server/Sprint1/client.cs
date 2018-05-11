@@ -8,16 +8,21 @@ namespace Sprint1
     [DataContract]//step2
     public class client
     {
-        private string address;
+        private string name_client;
         private string cell_client;
+        private int id_client;
+        private string address;
+        private string mail;
+        private string problem;
+        private string device;
         private string comment;
         private string complaint;
-        private string device;
-        private int id_client;
-        private string name_client;
-        private string problem;
+        
+        
+        
+        
         private string rate;
-        private string mail;
+        
         
         [DataMember]   //Step3
         public string Address

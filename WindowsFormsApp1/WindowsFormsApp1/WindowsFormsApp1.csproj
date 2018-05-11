@@ -209,5 +209,11 @@
   <ItemGroup>
     <None Include="Resources\money %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sync_126579.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

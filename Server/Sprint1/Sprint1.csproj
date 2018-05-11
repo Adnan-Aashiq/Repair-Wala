@@ -69,7 +69,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="client.cs" />
     <Compile Include="ClientsRecord.cs" />
-    <Compile Include="Repairer.cs" />
+    <Compile Include="Repairers.cs" />
     <Compile Include="RepairersRecords.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>

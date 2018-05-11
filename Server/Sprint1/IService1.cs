@@ -25,8 +25,7 @@ namespace Sprint1
         bool Repairer_NotBuzy(Repairer r);
         [OperationContract]
         bool Assign_client(client c);       //***
-        [OperationContract]
-        bool Appoint_client(int id);       //***
+        
         [OperationContract]
         List<Repairer> Get_repairers_list();        //Step4
         [OperationContract]
@@ -47,6 +46,14 @@ namespace Sprint1
         bool edit_repairer(Repairer r);
         [OperationContract]
         bool save_feedback(client c, string comment, string complaint, string rate);
+        [OperationContract]
+        bool pay(client c, int amount);
+        [OperationContract]
+        bool start();
+        [OperationContract]
+        string get_admin_name();
+        [OperationContract]
+        string get_admin_id();
         /*[OperationContract]
         bool Change_Password(string s);
         Repairer Get_id_repairer(int id);
