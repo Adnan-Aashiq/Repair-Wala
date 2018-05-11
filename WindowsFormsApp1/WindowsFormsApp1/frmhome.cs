@@ -122,14 +122,18 @@ namespace WindowsFormsApp1
             if(valid== true)
             {
                 MessageBox.Show("Login Successful!");
+                frmrepairPortal frm = new frmrepairPortal();
+                this.Hide();
+                frm.Show();
             }
             else
             {
                 MessageBox.Show("Invalid!");
-                txtrepair.Hide();
-                txtrepair.Text = "Enter Passcode!";
-                cmdrepairid.Hide();
+                
             }
+            txtrepair.Hide();
+            txtrepair.Text = "Enter Passcode!";
+            cmdrepairid.Hide();
         }
 
         private void cmdhome_Click(object sender, EventArgs e)
@@ -144,6 +148,7 @@ namespace WindowsFormsApp1
             {
                 txtadmin.Hide();
                 txtadmin.Text = "Enter Passcode!";
+                cmdadminId.Hide();
                 frmadmin frm = new frmadmin();
                 this.Hide();
                 frm.Show();
@@ -152,6 +157,9 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Invalid!");
             }
+            txtadmin.Hide();
+            txtadmin.Text = "Enter Passcode!";
+            cmdadminId.Hide();
         }
     }
 }

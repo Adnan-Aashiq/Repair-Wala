@@ -66,7 +66,7 @@
             this.cmdhome.Name = "cmdhome";
             this.cmdhome.Size = new System.Drawing.Size(200, 44);
             this.cmdhome.TabIndex = 34;
-            this.cmdhome.Text = "Home";
+            this.cmdhome.Text = "Back";
             this.cmdhome.UseVisualStyleBackColor = false;
             this.cmdhome.Click += new System.EventHandler(this.cmdhome_Click);
             // 

@@ -17,3 +17,9 @@ C:\Users\Adnan Aashiq\Desktop\OOAD project\Server\Sprint1\bin\Sprint1.pdb
 C:\Users\Adnan Aashiq\Desktop\OOAD project\Server\Sprint1\obj\Debug\Sprint1.csprojResolveAssemblyReference.cache
 C:\Users\Adnan Aashiq\Desktop\OOAD project\Server\Sprint1\obj\Debug\Sprint1.dll
 C:\Users\Adnan Aashiq\Desktop\OOAD project\Server\Sprint1\obj\Debug\Sprint1.pdb
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\bin\Sprint1.dll.config
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\bin\Sprint1.dll
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\bin\Sprint1.pdb
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\obj\Debug\Sprint1.csprojResolveAssemblyReference.cache
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\obj\Debug\Sprint1.dll
+C:\Users\Engr\Desktop\repair wala\sprint3jun\Server\Sprint1\obj\Debug\Sprint1.pdb

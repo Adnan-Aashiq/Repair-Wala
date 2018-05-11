@@ -16,6 +16,7 @@ namespace Sprint1
             r.Address = addres;
             r.Phone_number1 = cellno;
             r.Person_id1 = cnic;
+            r.Id = id;
             RepairersRecords.repairers.Add(r);
         }
         /*public static Repairer Get_id_repairer(int id)
