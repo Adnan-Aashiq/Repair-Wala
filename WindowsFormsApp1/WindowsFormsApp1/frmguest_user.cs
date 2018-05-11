@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
 
         private void cmdclogin_Click(object sender, EventArgs e)
         {
-            frmregister_user frm = frmregister_user.get_instance();
+            frmregister_user frm =new frmregister_user();
             this.Hide();
             frm.Show();
             txtcname.Text = "Enter Name";

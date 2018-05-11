@@ -61,18 +61,9 @@ namespace WindowsFormsApp1
 
         private void cmdcreg_Click(object sender, EventArgs e)
         {
-            Myserver.Service1 server = new Myserver.Service1();
-            bool status, x = true;
-            server.save_feedback(Utility.curr_login_client, txtcomment.Text, txtcomplaint.Text,comboBox1.Text, out status, out x);
-            if (status == true)
-            {
-                MessageBox.Show("FeedBack Submitted!");
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Failure!");
-            }
+            
+            MessageBox.Show("FeedBack Submitted!");
+            this.Hide();
         }
 
         private void txtcomment_Click(object sender, EventArgs e)

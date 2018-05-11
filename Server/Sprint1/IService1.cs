@@ -46,7 +46,7 @@ namespace Sprint1
         [OperationContract]
         bool edit_repairer(Repairer r);
         [OperationContract]
-        bool save_feedback(client c,string comment,string complaint,string rate);
+        bool save_feedback(client c, string comment, string complaint, string rate);
         /*[OperationContract]
         bool Change_Password(string s);
         Repairer Get_id_repairer(int id);

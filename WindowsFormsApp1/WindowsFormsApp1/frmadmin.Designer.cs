@@ -47,7 +47,7 @@
             // 
             // cmdhome
             // 
-            this.cmdhome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdhome.BackColor = System.Drawing.Color.Silver;
             this.cmdhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdhome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmdhome.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -90,7 +90,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -218,7 +218,7 @@
             this.button2.Location = new System.Drawing.Point(757, 133);
             this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 26);
+            this.button2.Size = new System.Drawing.Size(83, 27);
             this.button2.TabIndex = 46;
             this.button2.Text = "Done";
             this.button2.UseVisualStyleBackColor = false;

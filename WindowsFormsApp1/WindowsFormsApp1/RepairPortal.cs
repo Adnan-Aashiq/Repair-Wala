@@ -107,10 +107,6 @@ namespace WindowsFormsApp1
         private void txtid_Click(object sender, EventArgs e)
         {
             txtid.Clear();
-            if(txtid.Text == "")
-            {
-                txtid.Text = "Enter Id to select Order";
-            }
         }
 
         private void cmdselect_Click(object sender, EventArgs e)
@@ -124,29 +120,42 @@ namespace WindowsFormsApp1
                     BindingSource S = new BindingSource();
                     S.DataSource = c;
                     dataGridView2.DataSource = S;
+                    Utility.selected_client = c;
                 }
             }
         }
 
         private void cmddone_Click(object sender, EventArgs e)
         {
-            bool id = true;
+            bool x,id = true;
             Myserver.Service1 server = new Myserver.Service1();
             List<Myserver.client> list = server.Get_client_list().ToList<Myserver.client>();
             if (comboBox1.Text == "Completed")
             {
+                bool stat = true;
                 Utility.curr_repairer.Account = Utility.curr_repairer.Account + 300;
+                
+                server.remove_order(Utility.selected_client, Utility.curr_repairer.Id, stat);
+                server.edit_repairer(Utility.curr_repairer, out x, out id);
+
+                BindingSource S = new BindingSource();
+                S.DataSource = null;
+                dataGridView2.DataSource = S;
                 MessageBox.Show("300Rs is added to your account!");
             }
-            if (comboBox1.Text == "Remove")
+            if(comboBox1.Text == "Delete")
             {
-                foreach(Myserver.client c in Utility.curr_repairer.Orders1)
+                /*foreach(Myserver.client c in Utility.curr_repairer.Orders1)
                 {
                     if(txtid.Text == c.Id_client.ToString())
                     {
                         server.remove_order(c, Utility.curr_repairer.Id, id);
                     }
-                }
+                }*/
+                BindingSource S = new BindingSource();
+                S.DataSource = null;
+                dataGridView2.DataSource = S;
+
                 MessageBox.Show("Client is removed from Record!");
             }
             if (comboBox1.Text == "Fix Appointment")
@@ -164,9 +173,30 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cmdrefresh_Click(object sender, EventArgs e)
         {
 
+            Myserver.Service1 server = new Myserver.Service1();
+            List<Myserver.Repairer> list = server.Get_repairers_list().ToList<Myserver.Repairer>();
+            if(txtid.Text == "" || txtid.Text == "Enter Id to select Order")
+            {
+                MessageBox.Show("Page can not be refreashed!");
+            }
+            else
+            {
+                foreach (Myserver.Repairer r in list)
+                {
+          
+                    if (r.Id == Utility.curr_repairer.Id)
+                    {
+                        BindingSource S = new BindingSource();
+                        S.DataSource = r.Orders1;
+                        dataGridView1.DataSource = S;
+                        break;
+                    }
+                }
+            }
+            
         }
     }
 }

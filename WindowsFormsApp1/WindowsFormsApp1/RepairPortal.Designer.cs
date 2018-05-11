@@ -58,7 +58,7 @@
             // 
             // cmdhome
             // 
-            this.cmdhome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdhome.BackColor = System.Drawing.Color.Silver;
             this.cmdhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdhome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmdhome.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -94,7 +94,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -115,7 +115,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Completed",
             "Not Completed",
-            "Remove ",
+            "Delete",
             "Fix Appointment"});
             this.comboBox1.Location = new System.Drawing.Point(835, 304);
             this.comboBox1.Name = "comboBox1";
@@ -171,13 +171,13 @@
             // 
             this.cmdrefresh.BackColor = System.Drawing.Color.Honeydew;
             this.cmdrefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdrefresh.Location = new System.Drawing.Point(723, 44);
+            this.cmdrefresh.Location = new System.Drawing.Point(712, 57);
             this.cmdrefresh.Name = "cmdrefresh";
-            this.cmdrefresh.Size = new System.Drawing.Size(107, 31);
+            this.cmdrefresh.Size = new System.Drawing.Size(103, 31);
             this.cmdrefresh.TabIndex = 37;
             this.cmdrefresh.Text = "Refresh";
             this.cmdrefresh.UseVisualStyleBackColor = false;
-            this.cmdrefresh.Click += new System.EventHandler(this.button2_Click);
+            this.cmdrefresh.Click += new System.EventHandler(this.cmdrefresh_Click);
             // 
             // frmrepairPortal
             // 

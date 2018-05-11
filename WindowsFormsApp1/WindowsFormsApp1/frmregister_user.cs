@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
             cmdfeedback.Hide();
             cmdrepair.Hide();
             
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -81,7 +82,6 @@ namespace WindowsFormsApp1
             txtcproblem.Hide();
             cmdfeedback.Hide();
             cmdrepair.Hide();
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -172,6 +172,38 @@ namespace WindowsFormsApp1
         private void txtcproblem_Click(object sender, EventArgs e)
         {
             txtcproblem.Clear();
+        }
+
+        private void frmregister_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtacountnmbr_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtamount_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmdbank_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OnlineBank frm = new OnlineBank();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void txtccell_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -156,14 +156,13 @@ namespace Sprint1
             Repairer r = RepairersRecords.Search_Repairer(id);
             RepairersRecords.repairers.Remove(r);
         }
-
         public bool edit_repairer(Repairer r)
         {
             bool x = RepairersRecords.edit(r);
             return x;
         }
 
-        public bool save_feedback(client c, string comment, string complaint,string rate)
+        public bool save_feedback(client c, string comment, string complaint, string rate)
         {
             bool x = ClientsRecord.feedback(c, comment, complaint, rate);
             return x;

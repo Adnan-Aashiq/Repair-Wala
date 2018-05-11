@@ -36,6 +36,16 @@ namespace WindowsFormsApp1
             txtadmin.Hide();
             cmdrepairid.Hide();
             cmdadminId.Hide();
+            Utility.curr_repairer = null;
+            int x;
+            bool id = true;
+            Myserver.Service1 server = new Myserver.Service1();
+            server.Add_Clients("Junaid Ali", "LCD damage", "Johar Town Lahore", "03216964902", "Laptop", "Johhny424@gmail", out x, out id);
+            server.Add_Clients("Adnan Ashiq", "Charging Jeck", "Mumtaz hall UET Lahore", "03022149193", "Mobile", "AdnanAashiq457@gmail", out x, out id);
+            server.Add_Clients("Rafay", "Battery Dead", "Garden Town Lahore", "03217353212", "IPhone", "Rafay420@gmail", out x, out id);
+            server.Add_Repairer("Sohaib Arif", "Mumtaz HAll UET lahore", "03054238171", "352027362810662",1,id);
+            server.Add_Repairer("Bilal Sheikh", "Muslim Town Lahore", "032198761234", "35202312009662", 2, id);
+
         }
 
         private void txtpasscode_Click(object sender, EventArgs e)

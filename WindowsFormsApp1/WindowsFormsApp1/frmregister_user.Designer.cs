@@ -42,13 +42,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.cmdhome = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtcmail
             // 
             this.txtcmail.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtcmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcmail.Location = new System.Drawing.Point(107, 346);
+            this.txtcmail.Location = new System.Drawing.Point(80, 316);
             this.txtcmail.Name = "txtcmail";
             this.txtcmail.Size = new System.Drawing.Size(180, 26);
             this.txtcmail.TabIndex = 31;
@@ -58,7 +59,7 @@
             // 
             this.txtcaddress.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtcaddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcaddress.Location = new System.Drawing.Point(107, 301);
+            this.txtcaddress.Location = new System.Drawing.Point(80, 271);
             this.txtcaddress.Name = "txtcaddress";
             this.txtcaddress.Size = new System.Drawing.Size(180, 26);
             this.txtcaddress.TabIndex = 30;
@@ -68,7 +69,7 @@
             // 
             this.txtcproblem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtcproblem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcproblem.Location = new System.Drawing.Point(107, 255);
+            this.txtcproblem.Location = new System.Drawing.Point(80, 225);
             this.txtcproblem.Name = "txtcproblem";
             this.txtcproblem.Size = new System.Drawing.Size(180, 26);
             this.txtcproblem.TabIndex = 29;
@@ -80,17 +81,18 @@
             // 
             this.txtccell.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtccell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtccell.Location = new System.Drawing.Point(107, 165);
+            this.txtccell.Location = new System.Drawing.Point(80, 135);
             this.txtccell.Name = "txtccell";
             this.txtccell.Size = new System.Drawing.Size(180, 26);
             this.txtccell.TabIndex = 28;
             this.txtccell.Text = "Enter Phone#";
+            this.txtccell.TextChanged += new System.EventHandler(this.txtccell_TextChanged);
             // 
             // txtcdevice
             // 
             this.txtcdevice.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtcdevice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcdevice.Location = new System.Drawing.Point(107, 210);
+            this.txtcdevice.Location = new System.Drawing.Point(80, 180);
             this.txtcdevice.Name = "txtcdevice";
             this.txtcdevice.Size = new System.Drawing.Size(180, 26);
             this.txtcdevice.TabIndex = 27;
@@ -102,7 +104,7 @@
             // 
             this.txtcname.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.txtcname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtcname.Location = new System.Drawing.Point(107, 121);
+            this.txtcname.Location = new System.Drawing.Point(80, 91);
             this.txtcname.Name = "txtcname";
             this.txtcname.Size = new System.Drawing.Size(180, 26);
             this.txtcname.TabIndex = 25;
@@ -164,7 +166,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Chocolate;
+            this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -179,7 +181,7 @@
             // 
             // cmdhome
             // 
-            this.cmdhome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.cmdhome.BackColor = System.Drawing.Color.Silver;
             this.cmdhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmdhome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmdhome.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -194,7 +196,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.LightSalmon;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -207,6 +209,19 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Teal;
+            this.linkLabel1.Location = new System.Drawing.Point(122, 356);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(77, 16);
+            this.linkLabel1.TabIndex = 46;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Online Bank";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmregister_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +229,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 405);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cmdhome);
@@ -231,6 +247,7 @@
             this.Name = "frmregister_user";
             this.Text = "frmlogin";
             this.Load += new System.EventHandler(this.frmregister_user_Load);
+            this.Click += new System.EventHandler(this.frmregister_user_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +267,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button cmdhome;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

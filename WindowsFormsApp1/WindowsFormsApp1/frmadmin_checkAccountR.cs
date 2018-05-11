@@ -38,21 +38,9 @@ namespace WindowsFormsApp1
 
         private void cmdhome_Click(object sender, EventArgs e)
         {
-            frmadmin frm =new frmadmin();
+            frmadmin frm = frmadmin.get_instance();
             this.Hide();
             frm.Show();
-        }
-
-        private void cmdedit_Click(object sender, EventArgs e)
-        {
-            Myserver.Service1 server = new Myserver.Service1();
-            bool status, x = true;
-            server.edit_repairer(Utility.selected_repairer,out status,out x);
-            if(status == true)
-            {
-                MessageBox.Show("Repairer Details Saved!");
-            } 
-           
         }
     }
 }
